@@ -14,7 +14,7 @@ struct JOLTEON_APIClient {
     
     static func get(completion:(success:Bool, object:[[String:AnyObject]]) -> ()) {
         
-        let url = NSURL(string: "https://google.com")!
+        let url = NSURL(string: "http://jolteon.cricket:4000/yellow")!
         let session: NSURLSession = NSURLSession.sharedSession()
         let task:NSURLSessionDataTask = session.dataTaskWithURL(url) { (data, response, error) in
             
@@ -38,7 +38,7 @@ struct JOLTEON_APIClient {
     
     static func post(dictionary:[String:AnyObject]?) {
         
-        let url = NSURL(string: "https://google.com")!
+        let url = NSURL(string: "http://jolteon.cricket:4000/yellow")!
         
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
@@ -49,17 +49,8 @@ struct JOLTEON_APIClient {
                 
                 let session: NSURLSession = NSURLSession.sharedSession()
                 let task:NSURLSessionDataTask = session.dataTaskWithURL(url) { (data, response, error) in
-                    if let data = data {
-                        do {
-                            if let obj = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject] {
-                            }
-                            
-                        } catch let error as NSError {
-                            print("json error \(error.localizedDescription)")
-                        }
-                    }
+
                 }
-                
                 task.resume()
                 
             } catch let error as NSError {
