@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF577B9E1D1E156F00C4BCE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577B9D1D1E156F00C4BCE2 /* AppDelegate.swift */; };
+		AF577BA01D1E156F00C4BCE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577B9F1D1E156F00C4BCE2 /* ViewController.swift */; };
+		AF577BA31D1E156F00C4BCE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF577BA11D1E156F00C4BCE2 /* Main.storyboard */; };
+		AF577BA51D1E156F00C4BCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF577BA41D1E156F00C4BCE2 /* Assets.xcassets */; };
+		AF577BA81D1E156F00C4BCE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF577BA61D1E156F00C4BCE2 /* LaunchScreen.storyboard */; };
+		AF577BB31D1E156F00C4BCE2 /* JolteonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577BB21D1E156F00C4BCE2 /* JolteonTests.swift */; };
+		AF577BBE1D1E156F00C4BCE2 /* JolteonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577BBD1D1E156F00C4BCE2 /* JolteonUITests.swift */; };
+		AF577BD01D1F1DFD00C4BCE2 /* JOLTEON_APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577BCF1D1F1DFD00C4BCE2 /* JOLTEON_APIClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF577BAF1D1E156F00C4BCE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF577B921D1E156F00C4BCE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF577B991D1E156F00C4BCE2;
+			remoteInfo = Jolteon;
+		};
+		AF577BBA1D1E156F00C4BCE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF577B921D1E156F00C4BCE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF577B991D1E156F00C4BCE2;
+			remoteInfo = Jolteon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF577B9A1D1E156F00C4BCE2 /* Jolteon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jolteon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF577B9D1D1E156F00C4BCE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF577B9F1D1E156F00C4BCE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF577BA21D1E156F00C4BCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF577BA41D1E156F00C4BCE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF577BA71D1E156F00C4BCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF577BA91D1E156F00C4BCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF577BAE1D1E156F00C4BCE2 /* JolteonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JolteonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF577BB21D1E156F00C4BCE2 /* JolteonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JolteonTests.swift; sourceTree = "<group>"; };
+		AF577BB41D1E156F00C4BCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF577BB91D1E156F00C4BCE2 /* JolteonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JolteonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF577BBD1D1E156F00C4BCE2 /* JolteonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JolteonUITests.swift; sourceTree = "<group>"; };
+		AF577BBF1D1E156F00C4BCE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF577BCF1D1F1DFD00C4BCE2 /* JOLTEON_APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JOLTEON_APIClient.swift; path = ../JOLTEON_APIClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF577B971D1E156F00C4BCE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF577BAB1D1E156F00C4BCE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF577BB61D1E156F00C4BCE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF577B911D1E156F00C4BCE2 = {
+			isa = PBXGroup;
+			children = (
+				AF577B9C1D1E156F00C4BCE2 /* Jolteon */,
+				AF577BB11D1E156F00C4BCE2 /* JolteonTests */,
+				AF577BBC1D1E156F00C4BCE2 /* JolteonUITests */,
+				AF577B9B1D1E156F00C4BCE2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF577B9B1D1E156F00C4BCE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF577B9A1D1E156F00C4BCE2 /* Jolteon.app */,
+				AF577BAE1D1E156F00C4BCE2 /* JolteonTests.xctest */,
+				AF577BB91D1E156F00C4BCE2 /* JolteonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF577B9C1D1E156F00C4BCE2 /* Jolteon */ = {
+			isa = PBXGroup;
+			children = (
+				AF577B9D1D1E156F00C4BCE2 /* AppDelegate.swift */,
+				AF577B9F1D1E156F00C4BCE2 /* ViewController.swift */,
+				AF577BCF1D1F1DFD00C4BCE2 /* JOLTEON_APIClient.swift */,
+				AF577BA11D1E156F00C4BCE2 /* Main.storyboard */,
+				AF577BA41D1E156F00C4BCE2 /* Assets.xcassets */,
+				AF577BA61D1E156F00C4BCE2 /* LaunchScreen.storyboard */,
+				AF577BA91D1E156F00C4BCE2 /* Info.plist */,
+			);
+			path = Jolteon;
+			sourceTree = "<group>";
+		};
+		AF577BB11D1E156F00C4BCE2 /* JolteonTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF577BB21D1E156F00C4BCE2 /* JolteonTests.swift */,
+				AF577BB41D1E156F00C4BCE2 /* Info.plist */,
+			);
+			path = JolteonTests;
+			sourceTree = "<group>";
+		};
+		AF577BBC1D1E156F00C4BCE2 /* JolteonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF577BBD1D1E156F00C4BCE2 /* JolteonUITests.swift */,
+				AF577BBF1D1E156F00C4BCE2 /* Info.plist */,
+			);
+			path = JolteonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF577B991D1E156F00C4BCE2 /* Jolteon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF577BC21D1E156F00C4BCE2 /* Build configuration list for PBXNativeTarget "Jolteon" */;
+			buildPhases = (
+				AF577B961D1E156F00C4BCE2 /* Sources */,
+				AF577B971D1E156F00C4BCE2 /* Frameworks */,
+				AF577B981D1E156F00C4BCE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jolteon;
+			productName = Jolteon;
+			productReference = AF577B9A1D1E156F00C4BCE2 /* Jolteon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF577BAD1D1E156F00C4BCE2 /* JolteonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF577BC51D1E156F00C4BCE2 /* Build configuration list for PBXNativeTarget "JolteonTests" */;
+			buildPhases = (
+				AF577BAA1D1E156F00C4BCE2 /* Sources */,
+				AF577BAB1D1E156F00C4BCE2 /* Frameworks */,
+				AF577BAC1D1E156F00C4BCE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF577BB01D1E156F00C4BCE2 /* PBXTargetDependency */,
+			);
+			name = JolteonTests;
+			productName = JolteonTests;
+			productReference = AF577BAE1D1E156F00C4BCE2 /* JolteonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF577BB81D1E156F00C4BCE2 /* JolteonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF577BC81D1E156F00C4BCE2 /* Build configuration list for PBXNativeTarget "JolteonUITests" */;
+			buildPhases = (
+				AF577BB51D1E156F00C4BCE2 /* Sources */,
+				AF577BB61D1E156F00C4BCE2 /* Frameworks */,
+				AF577BB71D1E156F00C4BCE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF577BBB1D1E156F00C4BCE2 /* PBXTargetDependency */,
+			);
+			name = JolteonUITests;
+			productName = JolteonUITests;
+			productReference = AF577BB91D1E156F00C4BCE2 /* JolteonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF577B921D1E156F00C4BCE2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dylan Straughan";
+				TargetAttributes = {
+					AF577B991D1E156F00C4BCE2 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					AF577BAD1D1E156F00C4BCE2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AF577B991D1E156F00C4BCE2;
+					};
+					AF577BB81D1E156F00C4BCE2 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AF577B991D1E156F00C4BCE2;
+					};
+				};
+			};
+			buildConfigurationList = AF577B951D1E156F00C4BCE2 /* Build configuration list for PBXProject "Jolteon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF577B911D1E156F00C4BCE2;
+			productRefGroup = AF577B9B1D1E156F00C4BCE2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF577B991D1E156F00C4BCE2 /* Jolteon */,
+				AF577BAD1D1E156F00C4BCE2 /* JolteonTests */,
+				AF577BB81D1E156F00C4BCE2 /* JolteonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF577B981D1E156F00C4BCE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF577BA81D1E156F00C4BCE2 /* LaunchScreen.storyboard in Resources */,
+				AF577BA51D1E156F00C4BCE2 /* Assets.xcassets in Resources */,
+				AF577BA31D1E156F00C4BCE2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF577BAC1D1E156F00C4BCE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF577BB71D1E156F00C4BCE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF577B961D1E156F00C4BCE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF577BA01D1E156F00C4BCE2 /* ViewController.swift in Sources */,
+				AF577B9E1D1E156F00C4BCE2 /* AppDelegate.swift in Sources */,
+				AF577BD01D1F1DFD00C4BCE2 /* JOLTEON_APIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF577BAA1D1E156F00C4BCE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF577BB31D1E156F00C4BCE2 /* JolteonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF577BB51D1E156F00C4BCE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF577BBE1D1E156F00C4BCE2 /* JolteonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF577BB01D1E156F00C4BCE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF577B991D1E156F00C4BCE2 /* Jolteon */;
+			targetProxy = AF577BAF1D1E156F00C4BCE2 /* PBXContainerItemProxy */;
+		};
+		AF577BBB1D1E156F00C4BCE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF577B991D1E156F00C4BCE2 /* Jolteon */;
+			targetProxy = AF577BBA1D1E156F00C4BCE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF577BA11D1E156F00C4BCE2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF577BA21D1E156F00C4BCE2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF577BA61D1E156F00C4BCE2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF577BA71D1E156F00C4BCE2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF577BC01D1E156F00C4BCE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF577BC11D1E156F00C4BCE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF577BC31D1E156F00C4BCE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Jolteon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Volcan.Jolteon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF577BC41D1E156F00C4BCE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Jolteon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Volcan.Jolteon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AF577BC61D1E156F00C4BCE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JolteonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Volcan.JolteonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jolteon.app/Jolteon";
+			};
+			name = Debug;
+		};
+		AF577BC71D1E156F00C4BCE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JolteonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Volcan.JolteonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jolteon.app/Jolteon";
+			};
+			name = Release;
+		};
+		AF577BC91D1E156F00C4BCE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JolteonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Volcan.JolteonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Jolteon;
+			};
+			name = Debug;
+		};
+		AF577BCA1D1E156F00C4BCE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JolteonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Volcan.JolteonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Jolteon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF577B951D1E156F00C4BCE2 /* Build configuration list for PBXProject "Jolteon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF577BC01D1E156F00C4BCE2 /* Debug */,
+				AF577BC11D1E156F00C4BCE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF577BC21D1E156F00C4BCE2 /* Build configuration list for PBXNativeTarget "Jolteon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF577BC31D1E156F00C4BCE2 /* Debug */,
+				AF577BC41D1E156F00C4BCE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF577BC51D1E156F00C4BCE2 /* Build configuration list for PBXNativeTarget "JolteonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF577BC61D1E156F00C4BCE2 /* Debug */,
+				AF577BC71D1E156F00C4BCE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF577BC81D1E156F00C4BCE2 /* Build configuration list for PBXNativeTarget "JolteonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF577BC91D1E156F00C4BCE2 /* Debug */,
+				AF577BCA1D1E156F00C4BCE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF577B921D1E156F00C4BCE2 /* Project object */;
+}
