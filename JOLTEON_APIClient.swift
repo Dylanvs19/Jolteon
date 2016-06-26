@@ -12,7 +12,7 @@ struct JOLTEON_APIClient {
     
     var JSONDictionary:[[String:Int]]?
     
-    static func get(completion:(success:Bool, object:[[String:AnyObject]]) -> ()) {
+    static func get(completion:(success:Bool, object:[String:String]) -> ()) {
         
         let url = NSURL(string: "http://jolteon.cricket:4000/yellow")!
         let session: NSURLSession = NSURLSession.sharedSession()
@@ -20,15 +20,15 @@ struct JOLTEON_APIClient {
             
             if let data = data {
                 do {
-                    if let obj = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [[String:AnyObject]] {
+                    if let obj = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:String] {
                         completion(success: true, object: obj)
                     } else {
-                        completion(success: false, object: [])
+                        completion(success: false, object: [:])
                     }
                     
                 } catch let error as NSError {
                     print("json error \(error.localizedDescription)")
-                    completion(success: true, object: [])
+                    completion(success: true, object: [:])
                 }
             }
         }

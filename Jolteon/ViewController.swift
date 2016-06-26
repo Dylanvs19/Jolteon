@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var center:CGPoint {
         return view.center
     }
+    var lastColor:UIColor = UIColor.whiteColor()
     var status:Bool = false
     
     override func viewDidLoad() {
@@ -23,25 +24,52 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ViewController.didPan(_:)))
         view.addGestureRecognizer(panGestureRecognizer)
         panGestureRecognizer.delegate = self
+        panGestureRecognizer.enabled = false
         
-        
+        view.backgroundColor = UIColor.blackColor()
         
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
         
-        let dictionary = ["status": String(status)]
+//        let dictionary = ["status": String(status)]
 
         if status { //light is on
         
-            JOLTEON_APIClient.post(dictionary) // post to turn off
+//            JOLTEON_APIClient.post(dictionary) // post to turn off
+            JOLTEON_APIClient.get({ (success, object) in
+                
+            })
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.view.backgroundColor = UIColor.blackColor()
+                self.view.layoutIfNeeded()
+            })
+            
+            status = false
+            panGestureRecognizer.enabled = false
             
         } else { // light is off
             
-            JOLTEON_APIClient.post(dictionary) // post to turn on
+//            JOLTEON_APIClient.post(dictionary) // post to turn on
             JOLTEON_APIClient.get({ (success, object) in
-                <#code#>
+//                if success {
+//                    
+//                    let color = UIColor()
+//                        
+//                        color.parse(object)
+//                    
+//                    
+//                    self.view.backgroundColor = color
+//                }
             })
+            
+            status = true
+            UIView.animateWithDuration(0.5, animations: {
+                self.view.backgroundColor = self.lastColor
+                self.view.layoutIfNeeded()
+            })
+            panGestureRecognizer.enabled = true
 
         }
         
@@ -91,10 +119,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 extension UIColor {
     
     func parse(dictionary:[String:String]) -> UIColor {
-        let color:UIColor!
-        
-        
+        var color:UIColor {
+            return UIColor.init(red: CGFloat(Double(dictionary["red"]!)!), green: CGFloat(Double(dictionary["green"]!)!), blue: CGFloat(Double(dictionary["blue"]!)!), alpha: 1)
+        }
+        return color
     }
-    
     
 }
