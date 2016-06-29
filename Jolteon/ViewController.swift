@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
-
+    
     @IBOutlet var powerButton: UIButton!
     var panGestureRecognizer:UIPanGestureRecognizer!
     var center:CGPoint {
@@ -32,61 +32,47 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func buttonPressed(sender: AnyObject) {
         
-//        let dictionary = ["status": String(status)]
-
         if status { //light is on
-        
-//            JOLTEON_APIClient.post(dictionary) // post to turn off
-            JOLTEON_APIClient.get({ (success, object) in
-                
-            })
+            
+            status = false
+            panGestureRecognizer.enabled = false
+            APIClient.post(rgb(UIColor.blackColor(), status: status))
             
             UIView.animateWithDuration(0.5, animations: {
                 self.view.backgroundColor = UIColor.blackColor()
                 self.view.layoutIfNeeded()
             })
             
-            status = false
-            panGestureRecognizer.enabled = false
-            
         } else { // light is off
             
-//            JOLTEON_APIClient.post(dictionary) // post to turn on
-            JOLTEON_APIClient.get({ (success, object) in
-//                if success {
-//                    
-//                    let color = UIColor()
-//                        
-//                        color.parse(object)
-//                    
-//                    
-//                    self.view.backgroundColor = color
-//                }
-            })
-            
             status = true
+            panGestureRecognizer.enabled = true
+            lastColor = UIColor.whiteColor()
+            APIClient.post(rgb(lastColor, status: status))
+            
             UIView.animateWithDuration(0.5, animations: {
                 self.view.backgroundColor = self.lastColor
                 self.view.layoutIfNeeded()
             })
-            panGestureRecognizer.enabled = true
-
         }
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func didPan(gestureRecognizer:UIPanGestureRecognizer) {
         
-        print(angleForPoint(gestureRecognizer.locationInView(view)))
-        view.backgroundColor = UIColor(hue: angleForPoint(gestureRecognizer.locationInView(view)), saturation: 1, brightness: 1, alpha: 1)
-        
-//        JOLTEON_APIClient.post(rgb(view.backgroundColor!))
-        
+        if gestureRecognizer.state == UIGestureRecognizerState.Ended {
+            
+            print(angleForPoint(gestureRecognizer.locationInView(view)))
+            view.backgroundColor = UIColor(hue: angleForPoint(gestureRecognizer.locationInView(view)), saturation: 1, brightness: 1, alpha: 1)
+            if let color = view.backgroundColor {
+                lastColor = color
+                APIClient.post(rgb(lastColor, status: status))
+            }
+        }
     }
     
     func angleForPoint(point:CGPoint) -> CGFloat {
@@ -102,18 +88,20 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return angle
     }
     
-    func rgb(color:UIColor) -> [String:String] {
+    func rgb(color:UIColor, status:Bool) -> [String: AnyObject] {
         
-        let dictionary = ["red": String(CIColor(color: color).red),
-                          "green": String(CIColor(color: color).green),
-                          "blue" : String(CIColor(color: color).blue)]
+        let red = (CIColor(color: color).red) * 255
+        let green = (CIColor(color: color).green) * 255
+        let blue = (CIColor(color: color).blue) * 255
+        
+        let dictionary:[String: AnyObject] = ["activate" : status,
+                                              "r": red,
+                                              "g": green,
+                                              "b" : blue]
         
         return dictionary
-
-        
     }
     
-
 }
 
 extension UIColor {
@@ -124,5 +112,4 @@ extension UIColor {
         }
         return color
     }
-    
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct JOLTEON_APIClient {
+struct APIClient {
     
     var JSONDictionary:[[String:Int]]?
     
@@ -38,19 +38,31 @@ struct JOLTEON_APIClient {
     
     static func post(dictionary:[String:AnyObject]?) {
         
-        let url = NSURL(string: "http://jolteon.cricket:4000/yellow")!
+        let url = NSURL(string: "http://jolteon.cricket/test")!
         
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
         if let dictionary = dictionary  {
             do {
-                let jsonData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: NSJSONWritingOptions.PrettyPrinted)
-                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(jsonData, options: [])
-                
+                let jsonData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: [])
+                request.HTTPBody = jsonData
                 let session: NSURLSession = NSURLSession.sharedSession()
-                let task:NSURLSessionDataTask = session.dataTaskWithURL(url) { (data, response, error) in
+                let task:NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+                    
+                    if let data = data {
+                        print (data)
 
-                }
+                        if let httpResponse = response as? NSHTTPURLResponse {
+                            print("error \(httpResponse.statusCode)")
+                        }
+                        
+                    }
+                    
+                    if error != nil {
+                        print(error?.localizedDescription)
+                    }
+                })
+                
                 task.resume()
                 
             } catch let error as NSError {
