@@ -14,7 +14,7 @@ struct APIClient {
     
     static func get(completion:(success:Bool, object:[String:String]) -> ()) {
         
-        let url = NSURL(string: "http://jolteon.cricket:4000/yellow")!
+        let url = NSURL(string: "http://jolteon.cricket/ledstrip")!
         let session: NSURLSession = NSURLSession.sharedSession()
         let task:NSURLSessionDataTask = session.dataTaskWithURL(url) { (data, response, error) in
             
@@ -38,26 +38,32 @@ struct APIClient {
     
     static func post(dictionary:[String:AnyObject]?) {
         
-        let url = NSURL(string: "http://jolteon.cricket/test")!
+        let session: NSURLSession = NSURLSession.sharedSession()
+
+        let url = NSURL(string: "http://jolteon.cricket/ledstrip")!
         
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         if let dictionary = dictionary  {
             do {
                 let jsonData = try NSJSONSerialization.dataWithJSONObject(dictionary, options: [])
                 request.HTTPBody = jsonData
-                let session: NSURLSession = NSURLSession.sharedSession()
                 let task:NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
                     
                     if let data = data {
-                        print (data)
-
+                        do {
+                        let obj = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                        print(obj)
                         if let httpResponse = response as? NSHTTPURLResponse {
-                            print("error \(httpResponse.statusCode)")
+                            print("status code: \(httpResponse.statusCode)")
                         }
+                            
+                        } catch {
                         
+                        }
                     }
-                    
                     if error != nil {
                         print(error?.localizedDescription)
                     }

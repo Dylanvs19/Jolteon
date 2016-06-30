@@ -36,7 +36,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             
             status = false
             panGestureRecognizer.enabled = false
-            APIClient.post(rgb(UIColor.blackColor(), status: status))
+            APIClient.post(activate(status))
             
             UIView.animateWithDuration(0.5, animations: {
                 self.view.backgroundColor = UIColor.blackColor()
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             status = true
             panGestureRecognizer.enabled = true
             lastColor = UIColor.whiteColor()
-            APIClient.post(rgb(lastColor, status: status))
+            APIClient.post(activate(status))
             
             UIView.animateWithDuration(0.5, animations: {
                 self.view.backgroundColor = self.lastColor
@@ -64,10 +64,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func didPan(gestureRecognizer:UIPanGestureRecognizer) {
         
+        view.backgroundColor = UIColor(hue: angleForPoint(gestureRecognizer.locationInView(view)), saturation: 1, brightness: 1, alpha: 1)
+
         if gestureRecognizer.state == UIGestureRecognizerState.Ended {
-            
-            print(angleForPoint(gestureRecognizer.locationInView(view)))
-            view.backgroundColor = UIColor(hue: angleForPoint(gestureRecognizer.locationInView(view)), saturation: 1, brightness: 1, alpha: 1)
             if let color = view.backgroundColor {
                 lastColor = color
                 APIClient.post(rgb(lastColor, status: status))
@@ -90,17 +89,33 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func rgb(color:UIColor, status:Bool) -> [String: AnyObject] {
         
-        let red = (CIColor(color: color).red) * 255
-        let green = (CIColor(color: color).green) * 255
-        let blue = (CIColor(color: color).blue) * 255
+        let red = round((CIColor(color: color).red) * 255)
+        let green = round((CIColor(color: color).green) * 255)
+        let blue = round((CIColor(color: color).blue) * 255)
         
-        let dictionary:[String: AnyObject] = ["activate" : status,
+        let dictionary:[String: AnyObject] = [
                                               "r": red,
                                               "g": green,
                                               "b" : blue]
         
         return dictionary
     }
+    
+    func activate(status:Bool) -> [String: AnyObject] {
+        
+        var activate:String = ""
+        
+        if status {
+            activate = "true"
+        } else {
+            activate = "false"
+        }
+
+        let dictionary:[String: AnyObject] = ["activate" : activate]
+        
+        return dictionary
+    }
+
     
 }
 

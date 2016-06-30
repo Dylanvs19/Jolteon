@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="n4u-82-ZO3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V8a-iq-reY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Qk4-aW-c2z" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BI6-xm-7Sy"/>
@@ -33,6 +32,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8a-iq-reY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-466" y="248"/>
         </scene>
@@ -78,6 +78,10 @@
         <scene sceneID="WNO-rE-e9W">
             <objects>
                 <viewController id="KZJ-bc-vh4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bxe-Fi-XD3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lev-9M-62c"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Oy-uV-qsP">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
