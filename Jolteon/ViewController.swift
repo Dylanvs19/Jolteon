@@ -8,10 +8,19 @@
 
 import UIKit
 
+protocol ViewControllerDelegate {
+    
+    func shouldPop()
+    func shouldReturn()
+}
+
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
+    var delegate:ViewControllerDelegate?
     @IBOutlet var powerButton: UIButton!
     var panGestureRecognizer:UIPanGestureRecognizer!
+    var swipeGestureRecognizer:UIScreenEdgePanGestureRecognizer!
+    var tapGestureRecognizer:UITapGestureRecognizer!
     var center:CGPoint {
         return view.center
     }
@@ -25,6 +34,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         view.addGestureRecognizer(panGestureRecognizer)
         panGestureRecognizer.delegate = self
         panGestureRecognizer.enabled = false
+        
+        swipeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(ViewController.didSwipe(_:)))
+        view.addGestureRecognizer(swipeGestureRecognizer)
+        swipeGestureRecognizer.delegate = self
+        swipeGestureRecognizer.enabled = true
+        
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.didTap(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.delegate = self
+        tapGestureRecognizer.enabled = false
+
         
         view.backgroundColor = UIColor.blackColor()
         
@@ -115,7 +135,22 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         return dictionary
     }
-
+    
+    func didSwipe(gestureRecognizer:UIScreenEdgePanGestureRecognizer) {
+        
+        if gestureRecognizer.edges == UIRectEdge.Right{
+            delegate?.shouldPop()
+            tapGestureRecognizer.enabled = true
+        }
+    }
+    
+    func didTap(gestureRecognizer:UITapGestureRecognizer) {
+        
+        if gestureRecognizer.state == .Ended {
+            delegate?.shouldReturn()
+            tapGestureRecognizer.enabled = false
+        }
+    }
     
 }
 

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qk4-aW-c2z">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main App View Controller-->
         <scene sceneID="n4u-82-ZO3">
             <objects>
-                <viewController id="Qk4-aW-c2z" sceneMemberID="viewController">
+                <viewController id="Qk4-aW-c2z" customClass="MainAppViewController" customModule="Jolteon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BI6-xm-7Sy"/>
                         <viewControllerLayoutGuide type="bottom" id="FrW-3V-54D"/>
@@ -19,22 +20,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-ne-xSI">
-                                <rect key="frame" x="72" y="-85" width="62" height="81"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-ne-xSI" userLabel="MainVC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="embed" id="fVB-Cf-VhE"/>
+                                </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="on1-mP-QLA">
-                                <rect key="frame" x="360" y="0.0" width="240" height="600"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="on1-mP-QLA" userLabel="sideVCContainerView">
+                                <rect key="frame" x="420" y="0.0" width="180" height="600"/>
                                 <connections>
                                     <segue destination="KZJ-bc-vh4" kind="embed" id="vgL-gU-Jjh"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="on1-mP-QLA" firstAttribute="height" secondItem="W9e-MW-p7A" secondAttribute="height" id="3LZ-2I-Vhh"/>
+                            <constraint firstItem="aKK-ne-xSI" firstAttribute="centerX" secondItem="W9e-MW-p7A" secondAttribute="centerX" id="738-fC-Wk9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="on1-mP-QLA" secondAttribute="trailing" constant="-20" id="7Nb-GS-yNy"/>
+                            <constraint firstItem="aKK-ne-xSI" firstAttribute="centerY" secondItem="W9e-MW-p7A" secondAttribute="centerY" id="Idy-Wf-jKj"/>
+                            <constraint firstItem="aKK-ne-xSI" firstAttribute="width" secondItem="W9e-MW-p7A" secondAttribute="width" id="bnc-Ey-dVr"/>
+                            <constraint firstItem="on1-mP-QLA" firstAttribute="centerY" secondItem="W9e-MW-p7A" secondAttribute="centerY" id="f34-32-1bL"/>
+                            <constraint firstItem="on1-mP-QLA" firstAttribute="width" secondItem="W9e-MW-p7A" secondAttribute="width" multiplier="0.3" id="fg1-5x-PHw"/>
+                            <constraint firstItem="aKK-ne-xSI" firstAttribute="height" secondItem="W9e-MW-p7A" secondAttribute="height" id="kkU-9e-lV8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainVCCenterX" destination="738-fC-Wk9" id="Vzm-pI-Fvt"/>
+                        <outlet property="mainVCContainerView" destination="aKK-ne-xSI" id="Y8i-Wg-vUQ"/>
+                        <outlet property="sideVCContainerView" destination="on1-mP-QLA" id="GXh-ag-5FZ"/>
+                        <outlet property="sideVCTrailingMargin" destination="7Nb-GS-yNy" id="BLh-NJ-B3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8a-iq-reY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-466" y="248"/>
+            <point key="canvasLocation" x="90" y="212"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -72,25 +92,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="279"/>
+            <point key="canvasLocation" x="894" y="212"/>
         </scene>
-        <!--View Controller-->
+        <!--SideVC-->
         <scene sceneID="WNO-rE-e9W">
             <objects>
-                <viewController id="KZJ-bc-vh4" sceneMemberID="viewController">
+                <viewController id="KZJ-bc-vh4" customClass="SideVC" customModule="Jolteon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bxe-Fi-XD3"/>
                         <viewControllerLayoutGuide type="bottom" id="Lev-9M-62c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7Oy-uV-qsP">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlB-BR-wBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="257"/>
+            <point key="canvasLocation" x="894" y="-464"/>
         </scene>
     </scenes>
     <resources>
