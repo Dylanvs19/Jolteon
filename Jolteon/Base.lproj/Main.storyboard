@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="90" y="212"/>
         </scene>
-        <!--View Controller-->
+        <!--Control View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Jolteon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ControlViewController" id="BYZ-38-t0r" customClass="ControlViewController" customModule="Jolteon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

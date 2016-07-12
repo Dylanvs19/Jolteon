@@ -10,7 +10,7 @@
 		AF50FF1C1D24CA5B00291692 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FF1B1D24CA5B00291692 /* MainAppViewController.swift */; };
 		AF50FF1E1D24CA7E00291692 /* SideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50FF1D1D24CA7E00291692 /* SideVC.swift */; };
 		AF577B9E1D1E156F00C4BCE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577B9D1D1E156F00C4BCE2 /* AppDelegate.swift */; };
-		AF577BA01D1E156F00C4BCE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577B9F1D1E156F00C4BCE2 /* ViewController.swift */; };
+		AF577BA01D1E156F00C4BCE2 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF577B9F1D1E156F00C4BCE2 /* ControlViewController.swift */; };
 		AF577BA31D1E156F00C4BCE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF577BA11D1E156F00C4BCE2 /* Main.storyboard */; };
 		AF577BA51D1E156F00C4BCE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF577BA41D1E156F00C4BCE2 /* Assets.xcassets */; };
 		AF577BA81D1E156F00C4BCE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF577BA61D1E156F00C4BCE2 /* LaunchScreen.storyboard */; };
@@ -37,11 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AF50FF1B1D24CA5B00291692 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
-		AF50FF1D1D24CA7E00291692 /* SideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideVC.swift; sourceTree = "<group>"; };
+		AF50FF1B1D24CA5B00291692 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainAppViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AF50FF1D1D24CA7E00291692 /* SideVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SideVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AF577B9A1D1E156F00C4BCE2 /* Jolteon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jolteon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF577B9D1D1E156F00C4BCE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF577B9F1D1E156F00C4BCE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF577B9F1D1E156F00C4BCE2 /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ControlViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AF577BA21D1E156F00C4BCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF577BA41D1E156F00C4BCE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF577BA71D1E156F00C4BCE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				AF577B9D1D1E156F00C4BCE2 /* AppDelegate.swift */,
 				AF50FF1B1D24CA5B00291692 /* MainAppViewController.swift */,
 				AF50FF1D1D24CA7E00291692 /* SideVC.swift */,
-				AF577B9F1D1E156F00C4BCE2 /* ViewController.swift */,
+				AF577B9F1D1E156F00C4BCE2 /* ControlViewController.swift */,
 				AF577BCF1D1F1DFD00C4BCE2 /* APIClient.swift */,
 				AF577BA11D1E156F00C4BCE2 /* Main.storyboard */,
 				AF577BA41D1E156F00C4BCE2 /* Assets.xcassets */,
@@ -266,7 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF577BA01D1E156F00C4BCE2 /* ViewController.swift in Sources */,
+				AF577BA01D1E156F00C4BCE2 /* ControlViewController.swift in Sources */,
 				AF577B9E1D1E156F00C4BCE2 /* AppDelegate.swift in Sources */,
 				AF577BD01D1F1DFD00C4BCE2 /* APIClient.swift in Sources */,
 				AF50FF1E1D24CA7E00291692 /* SideVC.swift in Sources */,
