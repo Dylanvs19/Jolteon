@@ -16,23 +16,34 @@ class MainAppViewController: UIViewController {
     @IBOutlet var sideVCTrailingMargin: NSLayoutConstraint!
     @IBOutlet var mainVCCenterX: NSLayoutConstraint!
     
+    var shouldPop = true
+    
     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ControlViewController") as? ControlViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(MainAppViewController.pop), name:"SideVCPop", object: nil)
-        
-        sideVCTrailingMargin.constant = -view.frame.size.width * 0.35
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(pop), name:"SideVCPop", object: nil)
         
     }
     
     
     func pop() {
         print("pop!")
-            sideVCTrailingMargin.constant = 0
-            sideVCTrailingMargin.constant = -view.frame.size.width * 0.35
-
+        if shouldPop {
+            shouldPop = false
+            UIView.animateWithDuration(0.5, delay: 0, options: [], animations: {
+                self.mainVCCenterX.constant = -self.view.frame.size.width * 0.3
+                self.view.layoutIfNeeded()
+                }, completion: nil)
+            
+        } else {
+            shouldPop = true
+            UIView.animateWithDuration(0.5, delay: 0, options: [.CurveEaseInOut], animations: {
+                self.mainVCCenterX.constant = 0
+                self.view.layoutIfNeeded()
+                }, completion: nil)
+        }
     }
     
     

@@ -12,13 +12,15 @@ class ControlViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet var powerButton: UIButton!
     var panGestureRecognizer: UIPanGestureRecognizer!
-    var swipeGestureRecognizer: UIScreenEdgePanGestureRecognizer!
+    var swipeGestureRecognizer: UISwipeGestureRecognizer!
     var tapGestureRecognizer: UITapGestureRecognizer!
+    var longPressGestureRecognizer: UILongPressGestureRecognizer!
     var center:CGPoint {
         return view.center
     }
     var lastColor:UIColor = UIColor.whiteColor()
     var status:Bool = false
+    var shouldChangeColor = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ class ControlViewController: UIViewController, UIGestureRecognizerDelegate {
         panGestureRecognizer.delegate = self
         panGestureRecognizer.enabled = false
         
-        swipeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(ControlViewController.didSwipe(_:)))
+        swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ControlViewController.didSwipe(_:)))
         view.addGestureRecognizer(swipeGestureRecognizer)
         swipeGestureRecognizer.delegate = self
         swipeGestureRecognizer.enabled = true
@@ -38,6 +40,11 @@ class ControlViewController: UIViewController, UIGestureRecognizerDelegate {
         tapGestureRecognizer.delegate = self
         tapGestureRecognizer.numberOfTapsRequired = 2
         tapGestureRecognizer.enabled = true
+        
+        longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(ControlViewController.didPress(_:)))
+        view.addGestureRecognizer(longPressGestureRecognizer)
+        longPressGestureRecognizer.delegate = self
+        longPressGestureRecognizer.enabled = true
         
         view.backgroundColor = UIColor.blackColor()
         
@@ -76,14 +83,15 @@ class ControlViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func didPan(gestureRecognizer:UIPanGestureRecognizer) {
+        if shouldChangeColor {
+            view.backgroundColor = UIColor(hue: angleForPoint(gestureRecognizer.locationInView(view)), saturation: 1, brightness: 1, alpha: 1)
         
-        view.backgroundColor = UIColor(hue: angleForPoint(gestureRecognizer.locationInView(view)), saturation: 1, brightness: 1, alpha: 1)
-
         if gestureRecognizer.state == UIGestureRecognizerState.Ended {
             if let color = view.backgroundColor {
                 lastColor = color
                 APIClient.post(rgb(lastColor, status: status))
             }
+        }
         }
     }
     
@@ -129,10 +137,10 @@ class ControlViewController: UIViewController, UIGestureRecognizerDelegate {
         return dictionary
     }
     
-    func didSwipe(gestureRecognizer:UIScreenEdgePanGestureRecognizer) {
+    func didSwipe(gestureRecognizer:UISwipeGestureRecognizer) {
         
-        if gestureRecognizer.edges == UIRectEdge.Right{
-            tapGestureRecognizer.enabled = true
+        if gestureRecognizer.direction == .Left {
+            print("TO THE LEFT")
         }
     }
     
@@ -140,6 +148,23 @@ class ControlViewController: UIViewController, UIGestureRecognizerDelegate {
         if gestureRecognizer.state == .Ended {
             NSNotificationCenter.defaultCenter().postNotificationName("SideVCPop", object: nil)
         }
+    }
+    
+    func didPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        
+        if gestureRecognizer.state == .Began {
+            shouldChangeColor = true
+            print("longpressBegan")
+        } else if gestureRecognizer.state == .Ended {
+            shouldChangeColor = false
+        }
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer.isKindOfClass(UISwipeGestureRecognizer) || otherGestureRecognizer.isKindOfClass(UISwipeGestureRecognizer) {
+        }
+        
+        return true
     }
 }
 
